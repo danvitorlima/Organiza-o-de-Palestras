@@ -1,117 +1,64 @@
-# Organização de palestras de uma conferência
+# Organizador de Palestras de Conferência
 
-Você está planejando uma grande conferencia de programação e recebeu diversas propostas de palestras, mas você está com problemas para organizá-las de acordo com as restrições de tempo do dia - existem tantas possibilidades! Então, você decide escrever um programa para fazer isso por você.
+Organiza palestras automaticamente, separa em horários da manhã, tarde e evento de networking. Feito em Python.
 
-1. A conferencia tem várias tracks, cada qual tendo uma sessão pela manhã e outra pela tarde.
-2. Cada sessão contém várias palestras.
-3. Sessões pela manhã começam às 9h e devem terminar às 12h, para o almoço.
-4. Sessões pela tarde começam às 13h e devem terminar a tempo de realizar o evento de networking.
-5. O evento de networking deve começar depois das 16h, mas antes das 17h.
-6. Nenhum dos nomes das palestras possui números.
-7. A duração de todas as palestras são fornecidas em minutos ou definidas como lightning (palestras de 5 minutos).
-8. Os palestrantes serão bastante pontuais, então não há a necessidade de intervalos entre as palestras.
+---
 
-Observe que, dependendo de como você decida completar esse problema, sua solução pode trazer as palestras em ordem ou combinação diferentes dentro das tracks. Isso é aceitável; você não precisa replicar, exatamente, o resultado fornecido como exemplo de solução.
-Mas o resultado produzido deverá atender às regras especificadas.
+##  Arquivos
 
-## Dados a serem usados para teste:
-Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
+- `main.py` → Código principal
+- `proposals.txt` → Lista de palestras
+- `organizador_palestras.py`
 
-Reinventando a roda em ASP clássico 45min
+---
 
-Apresentando Lua para as massas 30min
+## Como usar 
 
-Erros de Ruby oriundos de versões erradas de gems 45min
+### 1. Verificar se o Python está instalado
 
-Erros comuns em Ruby 45min
+ Abrir **VS Code**
 
-Rails para usuários de Django lightning
+ Abrir a pasta do projeto  
+ Abrir o terminal no VS Code: `Terminal > Novo Terminal`
 
-Trabalho remoto: prós e cons 60min
+Digite no terminal:
 
-Desenvolvimento orientado a gambiarras 45min
+```bash
+python --version
+```
 
-Aplicações isomórficas: o futuro (que talvez nunca chegaremos) 30min
+Se aparecer algo como `Python 3.x.x` → OK
 
-Codifique menos, Escreva mais! 30min
+❌ Se aparecer erro:
+- Ir no site: https://www.python.org/downloads
+- Baixar e instalar
+- **Marcar a opção** `Add Python to PATH`
+- Depois de instalar, **fechar e abrir de novo o VS Code**
 
-Programação em par 45min
+---
 
-A mágica do Rails: como ser mais produtivo 60min
+### 2. Rodar o programa
 
-Ruby on Rails: Por que devemos deixá-lo para trás 60min
+No terminal (com `main.py` e `proposals.txt` na mesma pasta):
 
-Clojure engoliu Scala: migrando minha aplicação 45min
+```bash
+python main.py
+```
 
-Ensinando programação nas grotas de Maceió 30min
+O terminal vai mostrar as trilhas da conferência (Track A, Track B...)
 
-Ruby vs. Clojure para desenvolvimento backend 30min
+---
 
-Manutenção de aplicações legadas em Ruby on Rails 60min
+## Teste (opcional)
 
-Um mundo sem StackOverflow 30min
+1. Instalar pytest:
 
-Otimizando CSS em aplicações Rails 30min
+```bash
+pip install pytest
+```
 
+2. Rodar teste:
 
-## Modelo do resultado esperado após execução da organização: 
-
-#### Track A:
-09:00 Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
-
-10:00 Reinventando a roda em ASP clássico 45min
-
-10:45 Apresentando Lua para as massas 30min
-
-11:15 Erros de Ruby oriundos de versões erradas de gems 45min
-
-12:00 Almoço
-
-13:00 Ruby on Rails: Por que devemos deixá-lo para trás 60min
-
-14:00 Erros comuns em Ruby 45min
-
-14:45 Programação em par 45min
-
-15:30 Ensinando programação nas grotas de Maceió 30min
-
-16:00 Ruby vs. Clojure para desenvolvimento backend 30min
-
-16:30 Otimizando CSS em aplicações Rails 30min
-
-17:00 Evento de Networking
-
-#### Track B:
-09:00 Trabalho remoto: prós e cons 60min
-
-10:00 A mágica do Rails: como ser mais produtivo 60min
-
-11:00 Aplicações isomórficas: o futuro (que talvez nunca chegaremos) 30min
-
-11:30 Codifique menos, Escreva mais! 30min
-
-12:00 Almoço
-
-13:00 Desenvolvimento orientado a gambiarras 45min
-
-13:45 Clojure engoliu Scala: migrando minha aplicação 45min
-
-14:30 Um mundo sem StackOverflow 30min
-
-15:00 Manutenção de aplicações legadas em Ruby on Rails 60min
-
-16:00 Rails para usuários de Django lightning
-
-17:00 Evento de Networking
-
-## Instruções
-Você deve produzir uma solução para o problema acima utilizando **qualquer linguagem de programação**.
-No diretório raiz do repositório, você encontrará o arquivo ***proposals.txt***, que contém a lista de palestras que deverão ser organizadas. Seu programa deverá ser capaz de ler este arquivo e processar cada uma das palestras, para que o resultado seja exibido no formato especificado no exemplo exibido acima.
-
-Espera-se que você encaminhe um código que acredite ser de qualidade, um código que funcione e que tenha sido evoluído no decorrer de seu desenvolvimento.
-
-Obs:
-
-Na hora de executar o código, será testada outra entrada semelhante, para comprovação da solução.
-
-Outro requisito é o envio dos testes que você produziu para verificar sua solução. Independente de serem feitos antes ou depois de criada a implementação, queremos ter a chance de observar sua habilidade em produzi-los e verificar as regras do problema.
+```bash
+pytest organizador_palestras.py
+```
